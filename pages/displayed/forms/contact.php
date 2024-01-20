@@ -13,16 +13,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tel = $_POST['tel'];
     $message = $_POST['message'];
 
-    // Insertar los datos en la base de datos, concretamente en la tabla de contacto
-    $sql = $db->query("INSERT INTO contact (name, surname, email, tel, message) VALUES ('$name', '$surname', '$email', '$tel', '$message');");
+    // Preparar la consulta preparada para insertar datos en la tabla de contacto evitando inyecciones SQL
+    $insert_query = $db->prepare("INSERT INTO contact (name, surname, email, tel, message) VALUES (?, ?, ?, ?, ?)");
+    $insert_query->bind_param('sssss', $name, $surname, $email, $tel, $message);
+    $result = $insert_query->execute();
 
     // Verificar si la consulta se realizó con éxito
-    if ($sql) {
+    if ($result) {
         echo "<div id='successPopup'>Consulta enviada con éxito</div>";
     } else {
         echo "<div id='errorPopup'>Ha ocurrido un error, vuelve a intentarlo</div>";
     }
+
+    // Cerrar la consulta preparada
+    $insert_query->close();
 }
+?>
+
 ?>
 
 <!DOCTYPE html>
@@ -43,8 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="menu row justify-content-around">
             <img class="menu__logo col-6 col-md-1 col-sm-4 mb-4 " src="../../../assets/img/BmbSinFondo.png" alt="BMB Shoes Logo">
             <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="../../../index.php">Inicio</a>
-            <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./../shop.php#man">Hombre</a>
-            <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./../shop.php#woman">Mujer</a>
+            <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./../shop.php">Tienda</a>
             <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./contact.php">Contáctanos</a>
 
             <?php

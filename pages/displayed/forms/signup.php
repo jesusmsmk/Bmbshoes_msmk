@@ -81,8 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <header>
         <div class="menu row justify-content-around">
             <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="../../../index.php">Inicio</a>
-            <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./../shop.php#man">Hombre</a>
-            <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./../shop.php#woman">Mujer</a>
+            <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./../shop.php">Tienda</a>
             <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./contact.php">Contáctanos</a>
             <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./login.php">Iniciar Sesión</a>
         </div>

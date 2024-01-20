@@ -34,8 +34,7 @@
             <img class="menu__logo col-6 col-md-1 col-sm-4 mb-4" src="./assets/img/BmbSinFondo.png" alt="BMB Shoes Logo">
             <!-- Enlaces del menú -->
             <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./index.php">Inicio</a>
-            <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./pages/displayed/shop.php#man">Hombre</a>
-            <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./pages/displayed/shop.php#woman">Mujer</a>
+            <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./pages/displayed/shop.php">Tienda</a>
             <a class="menu__link col-6 col-md-2 col-sm-6 mb-4" href="./pages/displayed/contact.php">Contáctanos</a>
             <?php
                 // Verificación de si el usuario ha iniciado sesión para mostrarte un elemento u otro
