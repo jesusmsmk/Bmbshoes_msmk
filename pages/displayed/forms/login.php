@@ -15,16 +15,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $passwd = $_POST['passwd'];
 
-    // Consultar si el usuario existe en la base de datos
-    $check_user = $db->query("SELECT * FROM users WHERE username='$username';");
+    // Consultar si el usuario existe en la base de datos utilizando una consulta preparada para evitar inyecciones sql
+    $check_user_query = $db->prepare("SELECT * FROM users WHERE username = ?");
+    $check_user_query->bind_param('s', $username);
+    $check_user_query->execute();
+    $check_user_result = $check_user_query->get_result();
 
-    if ($check_user->num_rows > 0) {
+    if ($check_user_result->num_rows > 0) {
         // Obtener el hash de la contraseña almacenada en la base de datos
-        $passwd_hash_query = $db->query("SELECT * FROM users WHERE username='$username'");
-        $passwd_hash_result = $passwd_hash_query->fetch_assoc();
+        $passwd_hash_query = $db->prepare("SELECT passwd FROM users WHERE username = ?");
+        $passwd_hash_query->bind_param('s', $username);
+        $passwd_hash_query->execute();
+        $passwd_hash_result = $passwd_hash_query->get_result()->fetch_assoc();
 
         // Verificar la contraseña ingresada con el hash almacenado
-        if (password_verify($passwd, $passwd_hash_result['passwd'])) {
+        if ($passwd_hash_result && password_verify($passwd, $passwd_hash_result['passwd'])) {
             // Establecer la sesión y redirigir a la página principal
             $_SESSION['username'] = $username;
 
@@ -41,8 +46,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         echo "<div id='errorPopup'>El usuario $username no existe</div>";
     }
+
+    // Cerrar las consultas preparadas
+    $check_user_query->close();
+    $passwd_hash_query->close();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">

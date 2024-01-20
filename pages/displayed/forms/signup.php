@@ -15,33 +15,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $passwd = $_POST['passwd'];
     $passwd_hash = password_hash($passwd, PASSWORD_DEFAULT);
 
-    // Verificar si el nombre de usuario ya está registrado
-    $sql = "SELECT * FROM users WHERE username='$newusername';";
-    $result = $db->query($sql);
+    // Verificar si el nombre de usuario ya está registrado utilizando una consulta preparada para evitar inyecciones SQL
+    $check_user_query = $db->prepare("SELECT * FROM users WHERE username = ?");
+    $check_user_query->bind_param('s', $newusername);
+    $check_user_query->execute();
+    $check_user_result = $check_user_query->get_result();
 
-    // Obtener el ID máximo existente y calcular el nuevo ID para el usuario de esta forma los ID's pueden ser reusados de cierta forma
-    $maxid_sql = "SELECT MAX(id) as max_id FROM users;";
-    $maxid_result = $db->query($maxid_sql);
-    $row = $maxid_result->fetch_assoc();
-    $id = $row['max_id'] + 1;
-
-    if ($result->num_rows > 0) {
+    if ($check_user_result->num_rows > 0) {
         // Mostrar mensaje de error si el usuario ya está registrado
         echo "<div id='errorPopup'>El usuario $newusername ya está registrado</div>";
     } else {
-        // Insertar nuevo usuario en la tabla users
-        $sql = "INSERT INTO users(id,username, passwd) VALUES ('$id', '$newusername', '$passwd_hash');";
-        $result = $db->query($sql);
+        // Insertar nuevo usuario en la tabla users utilizando una consulta preparada para evitar inyecciones SQL
+        $insert_user_query = $db->prepare("INSERT INTO users(username, passwd) VALUES (?, ?)");
+        $insert_user_query->bind_param('ss', $newusername, $passwd_hash);
+        $insert_user_result = $insert_user_query->execute();
 
-        if ($result) {
+        if ($insert_user_result) {
             // Obtener el ID del usuario recién insertado
             $user_id = $db->insert_id;
 
             // Insertar información adicional en la tabla user_details, por defecto la información adicional está vacía a opción de ser completada en el panel de usuario
-            $sql_details = "INSERT INTO user_details (user_id, username, name, surname, address, tel, email) VALUES ('$user_id', '$newusername', '', '', '', '', '')";
-            $result_details = $db->query($sql_details);
+            $insert_details_query = $db->prepare("INSERT INTO user_details (user_id, username, name, surname, address, tel, email) VALUES (?, ?, '', '', '', '', '')");
+            $insert_details_query->bind_param('is', $user_id, $newusername);
+            $insert_details_result = $insert_details_query->execute();
 
-            if ($result_details) {
+            if ($insert_details_result) {
                 // Mostrar mensaje de éxito si el usuario se registró correctamente
                 echo "<div id='successPopup'>Usuario registrado correctamente</div>";
             } else {
@@ -53,9 +51,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Mostrar mensaje de error si hay un problema al insertar el usuario
             echo "<div id='errorPopup'>Error al insertar usuario</div>";
         }
+
+        // Cerrar las consultas preparadas
+        $check_user_query->close();
+        $insert_user_query->close();
+        $insert_details_query->close();
     }
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
