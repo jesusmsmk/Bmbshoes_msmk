@@ -14,25 +14,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
-
--- Dumping database structure for bmbshoes
-CREATE DATABASE IF NOT EXISTS `bmbshoes` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci */;
-USE `bmbshoes`;
-
--- Dumping structure for table bmbshoes.contact
-CREATE TABLE IF NOT EXISTS `contact` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `surname` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `tel` varchar(20) DEFAULT NULL,
-  `message` text DEFAULT NULL,
-  `hour` timestamp NOT NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Dumping data for table bmbshoes.contact: ~0 rows (approximately)
-
 -- Dumping structure for table bmbshoes.products
 CREATE TABLE IF NOT EXISTS `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -53,42 +34,11 @@ INSERT INTO `products` (`id`, `name`, `price`, `description`, `image`) VALUES
 	(7, 'Nike Air Force 1 Low', 119.99, 'Con un estilo atrevido y muy cómodas, las Nike Air Force 1 ’07 siguen el mismo camino que el resto de la icónica familia de las Air Force. Las zapatillas, diseñadas inicialmente para el baloncesto, combinan la mejor funcionalidad deportiva con el clásico estilo urbano. Domina las calles con una de las zapatillas más populares de la historia.', 'https://images.footlocker.com/is/image/FLEU/314102253904_01?wid=581&hei=581&fmt=png-alpha'),
 	(8, 'Nike Dunk Low', 119.99, 'Las Dunk, creadas para la cancha y adaptadas al estilo urbano, vuelven con detalles clásicos y un estilo de baloncesto retro. La zona del tobillo acolchada y de perfil bajo y el diseño vintage ofrecen comodidad en cualquier lugar.VentajasParte superior que envejece para una perfección suave y un diseño duradero que recuerda al baloncesto de los 80.Mediasuela de espuma que ofrece una amortiguación reactiva y ligera.Zona del tobillo acolchada de perfil bajo para ofrecer un look elegante y cómodo.Suela exterior de goma con el punto de giro clásico de baloncesto para una mayor durabilidad, tracción y un estilo retro.Nike Dunkb>Nacidas de la combinación de mezclas, mejoras y fechas límite, las Nike Dunk llegaron a las canchas de baloncesto universitarias en la temporada 85-86. A pesar de que los diseños originales con el color de la universidad mantenían la fidelidad a tu institución, las Dunk no fueron muy populares. No obstante, la falta de popularidad de estas humildes zapatillas (y sus suelas planas y adherentes) conquistaron a los skaters. Décadas más tarde, este favorito para el día a día sigue luciendo innumerables combinaciones de colores, lo que demuestra su influencia.', 'https://images.footlocker.com/is/image/FLEU/314106127104_01?wid=581&hei=581&fmt=png-alpha');
 
--- Dumping structure for table bmbshoes.users
-CREATE TABLE IF NOT EXISTS `users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(20) DEFAULT NULL,
-  `passwd` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Dumping data for table bmbshoes.users: ~1 rows (approximately)
-INSERT INTO `users` (`id`, `username`, `passwd`) VALUES
-	(1, 'admin', '$2y$10$hTC8K2nPiqgd5sxfomQDpOuZh7QRRBy/VCWfAQRemiIRnWIRE7cW.');
-
--- Dumping structure for table bmbshoes.user_details
-CREATE TABLE IF NOT EXISTS `user_details` (
-  `user_details_id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  `name` varchar(255) DEFAULT NULL,
-  `surname` varchar(255) DEFAULT NULL,
-  `address` varchar(255) DEFAULT NULL,
-  `tel` varchar(15) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`user_details_id`),
-  KEY `user_id` (`user_id`),
-  CONSTRAINT `user_details_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- Dumping data for table bmbshoes.user_details: ~1 rows (approximately)
-INSERT INTO `user_details` (`user_details_id`, `user_id`, `username`, `name`, `surname`, `address`, `tel`, `email`) VALUES
-	(1, 1, 'admin', '', '', '', '', '');
-
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
-
-
--- ESTO ES UNA PRUEBA en MAIN
+<<<<<<< HEAD:bmbshoes.sql
+=======
+>>>>>>> 91e9d4f9c3edbbd47cc5e384e4a5b0edb32968a8:sql/products.sql
