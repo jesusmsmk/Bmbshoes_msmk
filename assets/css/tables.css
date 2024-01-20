@@ -1,0 +1,75 @@
+.main-table * {
+    text-align: center;
+}
+.main-table {
+    padding: 15px;
+    color: #bbb;
+    background-color: rgba(0, 0 , 0, 0.85) !important;
+    /* padding: 40px 120px; */
+    margin: 20px 0 230px 0;
+    box-shadow: -1px 7px 15px #999;
+
+}
+.thead-data {
+    font-size: 23px;
+    border: 1px solid #bbb;
+}
+.tdata {
+    padding: 10px;
+    border: 1px solid #bbb;
+
+}
+.trow {
+    border: 1px solid #bbb;
+    font-size: 18px;
+}
+.thead-main-data {
+    padding: 15px;
+    font-size: 35px;
+    text-align: center;
+}
+
+.total {
+    width: 70%;
+    padding: 15px 50px;
+    text-align: right;
+    font-size: 35px;
+}
+
+.tdata-foot {
+    font-size: 35px;
+}
+
+.empty {
+    color: #f97676;
+    padding: 20px;
+    font-size: 30px;
+}
+
+form {
+    border: none;
+}
+
+input {
+    padding: 5px;
+}
+.m-id {
+    width: 60px;
+}
+
+.m-username, .m-name, .m-tel {
+    width: 170px;
+}
+
+.m-foot-redirect {
+    font-size: 20px;
+    text-align: right;
+}
+
+.m-address {
+    width: 300px;
+}
+
+.tmod {
+    margin-bottom: 40px;
+}

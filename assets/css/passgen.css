@@ -1,0 +1,36 @@
+.form__input {
+    margin-bottom: 15px;
+    width: 30%;
+}
+/* .form {
+    padding:;
+} */
+.charquantity {
+    width: 200px;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+}
+
+.result-label {
+    margin-top: 25px;
+    color: #222acc;
+}
+
+.result-pass {
+    cursor: pointer;
+    caret-color: transparent;
+}
+
+.form__submit {
+    margin-top: 25px;
+}
+
+.form__link {
+    margin-top: 20px;
+}

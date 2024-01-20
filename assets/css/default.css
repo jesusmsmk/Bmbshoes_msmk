@@ -1,0 +1,140 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    /* box-sizing: border-box; */
+    user-select: none;
+    overflow-x: hidden;
+}
+
+html {
+    height: 100vh;
+}
+/* Font Import */
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+/* Body Styles */
+body {
+    background-image: url("../img/black-seamless-metal-texture-background-wallpapers-2-11614423394npzrlehu4u.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* Menu Styles */
+.menu {
+    padding: 20px;
+    background-color: black;
+    flex-wrap: wrap;
+}
+
+.menu__link {
+    padding: 20px;
+    font-size: max(20px, 1.4vw);
+    text-decoration: none;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    align-self: center;
+    border-radius: 10px;
+}
+
+.menu__logo {
+    cursor: pointer;
+    width: 100%;
+}
+
+.menu__link:hover {
+    background-color: #222;
+    text-decoration: underline;
+
+}
+
+/* Submenu Styles */
+.submenu {
+    padding: 10px;
+    background-color: #bbb;
+    animation: submenu 3s;
+    -webkit-animation: submenu 3s;
+}
+
+.submenu__link {
+    padding: 7px;
+    font-size: max(12px, 0.8vw);
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.submenu__link:hover {
+    background-color: #aaa;
+    text-decoration: underline;
+}
+
+/* Shop Footer Styles */
+.shop-footer {
+    margin-top: 10px;
+    padding: 20px 0;
+    color: #fff;
+    background-color: #000;
+    /* display: flex; */
+    /* justify-content: space-around; */
+}
+
+.footer-flex--1__title {
+    margin: 0 0 20px 0;
+    font-size: max(20px, 1.3vw);
+}
+
+.footer-flex--2__title {
+    margin: 0 0 20px 0;
+    font-size: max(20px, 1.3vw);
+}
+
+.footer-flex--1__link {
+    text-decoration: none;
+    color: #bbb;
+    display: inline-block;
+    min-width: 150px;
+}
+
+.footer-flex--1__link:hover {
+    text-decoration: underline;
+}
+
+.footer-flex--2__ubication {
+    color: #bbb;
+}
+
+.footer-flex--1__link > img,
+.footer-flex--2__ubication > img {
+    width: 20px;
+    position: relative;
+    top: 4px;
+}
+
+/* Footer Subflex Styles */
+.footer-subflex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Para manejar el ajuste en dispositivos más pequeños */
+}
+
+/* Keyframe Animation */
+@keyframes submenu {
+    from {
+        position: relative;
+        top: -70px;
+        z-index: -10;
+    }
+    to {
+        position: relative;
+        top: 0px;
+        z-index: -10;
+    }
+  }
+

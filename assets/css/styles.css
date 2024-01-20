@@ -1,0 +1,256 @@
+/* Favorite Styles */
+.favourite {
+    width: 100%;
+}
+
+/* Grid Styles */
+.collage, .favorite-grid, .inspiration-grid {
+    padding: 10px;
+}
+
+/* Article Styles */
+.collage__article, .collage__article--main, .favorite-grid__article, .inspiration-grid__article {
+    border: 5px solid black;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 15px;
+    background-color: #eee;
+}
+
+/* Article Title Styles */
+.collage__article__title, .favorite-grid__article__title, .inspiration-grid__article__title {
+    margin: 10px;
+    font-size: max(20px, 2vw);
+}
+
+/* Article Link Styles */
+.collage__article__link, .favorite-grid__article__link, .inspiration-grid__article__link {
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Article Link Hover Styles */
+.collage__article__link:hover, .favorite-grid__article__link:hover, .inspiration-grid__article__link:hover {
+    background-color: #ddd;
+}
+
+/* Main Article Styles */
+.collage__article--main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 33vw;
+    width: 100%;
+    background-origin: border-box;
+    background-size: cover;
+    background-image: url("https://media.discordapp.net/attachments/823245667916578857/1163558482537087076/2023_14_08_ONL_FL_BacktoSport_Italy_Look1_HPbanner_3200x1080_F1.webp?ex=65400348&is=652d8e48&hm=e52eebf8672044e0173f35c3739b7d031baf3d783132579c39091622e0fa381a&=&width=1440&height=486");
+}
+
+/* Main Article Title Styles */
+.collage__article--main__title {
+    margin: 15px;
+    font-size: max(20px, 4vw);
+    color: #fff;
+}
+
+/* Main Article Link Styles */
+.collage__article--main__link {
+    background-color: #eee;
+    text-decoration: none;
+    font-weight: 700;
+    color: black;
+    border-radius: 5px;
+    font-size: max(10px, 1.5vw);
+    padding: 1.3vw 2vw;
+}
+
+/* Main Article Link Hover Styles */
+.collage__article--main__link:hover {
+    background-color: #ddd;
+}
+
+/* Brands Container Styles */
+.brands-container {
+    padding: 10px;
+    gap: 10px;
+}
+
+/* Brands Container Link Styles */
+.brands-container__link {
+    flex: 1 1 auto;
+    background-color: #f5f5f5;
+    border: 3px solid black;
+}
+
+/* Brands Container Link Image Styles */
+.brands-container__link img {
+    width: 100%;
+}
+
+/* Trending Container Styles */
+.trending__container {
+    background-image: url("https://images.footlocker.com/content/dam/final/footlockereurope/Online_activations/fl-campaign/2023/2023_06_28_fl_onl_af1-epic/05_final_output_files/2023_06_28_FL_ONL_AF1_EPIC_ECOM_HPBanner_3200x1080.jpg");
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: max(20px, 2vw);
+    justify-content: center;
+    height: max(200px, 34vw);
+    background-size: contain;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Trending Container Title Styles */
+.trending__container__title {
+    font-size: max(10px, 2.5vw);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Trending Container Link Styles */
+.trending__container__link {
+    background-color: black;
+    width: 200px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Trending Container Link Hover Styles */
+.trending__container__link:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    background-color: #111;
+}
+
+/* Section Title Styles */
+.favorite__title, .inspiration__title, .category__title {
+    color: white;
+    font-size: max(20px, 1.7vw);
+    margin: 10px;
+}
+
+/* Category Flex Styles */
+.category-flex {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    column-gap: 10px;
+}
+
+/* Category Flex Article Styles */
+.category-flex__article {
+    background: darkgray;
+}
+
+/* Category Flex Image Styles */
+.category-flex__img {
+    width: 100%;
+}
+
+/* Category Flex Title Styles */
+.category-flex__title {
+    color: white;
+    text-align: center;
+    margin: 5px;
+}
+
+/* Footer Styles */
+.footer {
+    padding: 15px;
+    background-color: #000;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+}
+
+/* Footer Location Map Styles */
+.footer__location__map {
+    height: 350px;
+    margin-top: 10px;
+    border: 10px solid black;
+    border-radius: 20px;
+}
+
+/* Footer Contact Form Styles */
+.footer_contact__form {
+    max-width: 420px;
+    margin: 20px auto;
+}
+
+/* Form Input Styles */
+.form-input {
+    color: white;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border-radius: 5px;
+    line-height: 22px;
+    background-color: transparent;
+    border: 2px solid #aaa;
+    transition: all 0.3s;
+    padding: 13px;
+    margin-bottom: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    outline: 0;
+}
+
+/* Form Input Focus Styles */
+.form-input:focus {
+    border: 2px solid #aaa;
+}
+
+/* Form Textarea Styles */
+.form-textarea {
+    height: 150px;
+    line-height: 150%;
+    resize: vertical;
+}
+
+/* Form Submit Styles */
+.form_submit {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    width: 100%;
+    background: #aaa;
+    border-radius: 5px;
+    border: 0;
+    cursor: pointer;
+    color: white;
+    font-size: 24px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s;
+    margin-top: -4px;
+    font-weight: 700;
+}
+
+/* Form Submit Hover Styles */
+.form_submit:hover {
+    background: #0044ff;
+}
+
+
+/* Keyframe Animation */
+@keyframes menu {
+    from {
+        position: relative;
+        top: -100px;
+        z-index: -10;
+    }
+    to {
+        position: relative;
+        top: 0px;
+        z-index: -10;
+    }
+}

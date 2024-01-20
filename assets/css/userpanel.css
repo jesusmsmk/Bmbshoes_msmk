@@ -1,0 +1,44 @@
+.form__fieldset {
+    display: flex;
+    flex-direction: column;
+}
+.form__legend {
+    font-weight: 1000;
+    color: #222acc;
+}
+
+.form__label {
+    margin-bottom: 10px;
+}
+.form__input {
+    margin-bottom: 20px;
+}
+
+.username {
+    cursor: pointer;
+    caret-color: transparent;
+}
+
+.form__action {
+    margin-top: 200px;
+    text-align: center;
+    text-decoration: none;
+    color: #bbb;
+    font-weight: 600;
+    background-color: #c62626;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.form__action:hover {
+    background-color: #d63636;
+}
+
+.action-first {
+    margin-right: 10px;
+}
